@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Echoes
+namespace Echoes.UI
 {
-    public class MainMenu : MonoBehaviour
+    public class MenuManager : MonoBehaviour
     {
         public void ChooseScene(int scene)
         {
