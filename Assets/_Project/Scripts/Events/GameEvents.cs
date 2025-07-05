@@ -6,11 +6,13 @@ namespace Echoes.Events
     {
         // Event
         public static event Action OnGameStart;
-        public static event Action OnGameEnd;
+        public static event Action OnGameWin;
+        public static event Action OnGameLose; 
         
         // Caller
         public static void GameStartEvent() => OnGameStart?.Invoke();
-        public static void GameEndEvent() => OnGameEnd?.Invoke();
+        public static void GameWinEvent() => OnGameWin?.Invoke();
+        public static void GameLoseEvent() => OnGameLose?.Invoke();
         
     }
 }

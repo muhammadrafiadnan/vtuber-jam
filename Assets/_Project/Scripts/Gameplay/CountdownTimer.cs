@@ -1,6 +1,6 @@
-using Echoes.Events;
 using UnityEngine;
 using TMPro;
+using Echoes.Events;
 
 namespace Echoes.Gameplay
 {
@@ -31,14 +31,14 @@ namespace Echoes.Gameplay
             if (_currentTime <= 0f)
             {
                 _currentTime = 0f;
-                GameEvents.GameEndEvent();
+                GameEvents.GameLoseEvent();
             }
         }
         
         private void HandleTimerText()
         {
-            var minute = Mathf.FloorToInt(time / 60f);
-            var second = Mathf.FloorToInt(time % 60f);
+            var minute = Mathf.FloorToInt(_currentTime / 60f);
+            var second = Mathf.FloorToInt(_currentTime % 60f);
             
             timeTextUI.text = $"{minute:00}:{second:00}";
         }

@@ -1,4 +1,3 @@
-using UnityEngine;
 using Echoes.Events;
 using Echoes.Pattern;
 
@@ -11,13 +10,15 @@ namespace Echoes.Managers
         private void OnEnable()
         {
             GameEvents.OnGameStart += GameStart;
-            GameEvents.OnGameEnd += GameEnd;
+            GameEvents.OnGameWin += GameWin;
+            GameEvents.OnGameLose += GameLose;
         }
         
         private void OnDisable()
         {
             GameEvents.OnGameStart -= GameStart;
-            GameEvents.OnGameEnd -= GameEnd;
+            GameEvents.OnGameWin -= GameWin;
+            GameEvents.OnGameLose -= GameLose;
         }
 
         private void Start()
@@ -30,7 +31,12 @@ namespace Echoes.Managers
             IsGameStart = true;
         }
 
-        private void GameEnd()
+        private void GameWin()
+        {
+            IsGameStart = false;
+        }
+
+        private void GameLose()
         {
             IsGameStart = false;
         }

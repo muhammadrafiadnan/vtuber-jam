@@ -43,7 +43,7 @@ namespace Echoes.Puzzle
             IsActive = !IsActive;
             tileImageUI.sprite = IsActive ? activeSprite : inactiveSprite;
         }
-
+        
         private void OnClickTile()
         {
             if (_lightPuzzle == null)

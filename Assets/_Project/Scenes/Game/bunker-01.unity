@@ -460,7 +460,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &352982174
 RectTransform:
   m_ObjectHideFlags: 0
@@ -714,8 +714,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 891774513
-  m_SortingLayer: -1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: -5484504617215346395, guid: 62cf9b946287db84b8a1b6f69386bc48, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -825,9 +825,10 @@ GameObject:
   m_Component:
   - component: {fileID: 612629909}
   - component: {fileID: 612629910}
+  - component: {fileID: 612629911}
   m_Layer: 0
   m_Name: Code
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -893,6 +894,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.45297256, y: 0.7231095}
   m_EdgeRadius: 0
+--- !u!114 &612629911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612629908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78d65a88660b4220a940bad902102658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Code Lock
+  isActive: 1
+  puzzlePanelUI: {fileID: 0}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1624,6 +1640,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1283202802}
+  - component: {fileID: 1283202803}
   m_Layer: 0
   m_Name: --- Managers ---
   m_TagString: EditorOnly
@@ -1646,6 +1663,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1283202803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283202801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f69899e6736467b9582bdf2eadbe911, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1356302999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1902,9 +1931,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1488057245}
   - component: {fileID: 1488057246}
+  - component: {fileID: 1488057247}
   m_Layer: 0
   m_Name: Light
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1971,6 +2001,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.56730044, y: 0.5930328}
   m_EdgeRadius: 0
+--- !u!114 &1488057247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488057242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78d65a88660b4220a940bad902102658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Light Lock
+  isActive: 1
+  puzzlePanelUI: {fileID: 1459713864}
 --- !u!1001 &1709282535
 PrefabInstance:
   m_ObjectHideFlags: 0
