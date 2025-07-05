@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 using KevinCastejon.MoreAttributes;
@@ -16,8 +15,8 @@ namespace Echoes.Puzzle
         [Header("UI")]
         [SerializeField] private Image tileImageUI;
         [SerializeField] private Button tileButtonUI;
-        [SerializeField] private Color activeColor;
-        [SerializeField] private Color inactiveColor;
+        [SerializeField] private Sprite activeSprite;
+        [SerializeField] private Sprite inactiveSprite;
         
         // Reference
         private LightPuzzle _lightPuzzle;
@@ -30,25 +29,29 @@ namespace Echoes.Puzzle
             
             tileRow = matrix.row;
             tileColumn = matrix.col;
-            tileImageUI.color = inactiveColor;
+            tileImageUI.sprite = inactiveSprite;
            
             _lightPuzzle = lightPuzzle;
             
             // Button
-            tileButtonUI.onClick.AddListener(() => _lightPuzzle.HandleLights(tileRow, tileColumn));
+            tileButtonUI.onClick.AddListener(OnClickTile);
         }
         
         // Core
         public void ToggleTile()
         {
             IsActive = !IsActive;
-            ChangeTileImage();
+            tileImageUI.sprite = IsActive ? activeSprite : inactiveSprite;
         }
-        
-        private void ChangeTileImage()
+
+        private void OnClickTile()
         {
-            var colorTarget = IsActive ? activeColor : inactiveColor;
-            tileImageUI.color = colorTarget;
+            if (_lightPuzzle == null)
+            {
+                Debug.LogWarning("lightPuzzle is null!");
+                return;
+            }
+            _lightPuzzle.HandleLights(tileRow, tileColumn);
         }
     }
 }
