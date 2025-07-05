@@ -1,3 +1,4 @@
+using Echoes.Events;
 using UnityEngine;
 using TMPro;
 
@@ -30,9 +31,10 @@ namespace Echoes.Gameplay
             if (_currentTime <= 0f)
             {
                 _currentTime = 0f;
+                GameEvents.GameEndEvent();
             }
         }
-
+        
         private void HandleTimerText()
         {
             var minute = Mathf.FloorToInt(time / 60f);
