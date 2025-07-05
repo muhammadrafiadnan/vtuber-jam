@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: df435ebaf88657740afff8773cbec20e
+AssemblyDefinitionReferenceImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 229818
+  packageName: More Attributes
+  packageVersion: 1.1
+  assetPath: Assets/KevinCastejon/MoreAttributes/Core/HeaderPlusAttribute/Editor/MoreAttributesEditorAssemblyReference.asmref
+  uploadId: 658664

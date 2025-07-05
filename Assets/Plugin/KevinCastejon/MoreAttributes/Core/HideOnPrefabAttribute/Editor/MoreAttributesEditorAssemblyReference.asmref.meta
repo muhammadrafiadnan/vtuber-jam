@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 92dad8c79c79ae9419cf5339719976e0
+AssemblyDefinitionReferenceImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 229818
+  packageName: More Attributes
+  packageVersion: 1.1
+  assetPath: Assets/KevinCastejon/MoreAttributes/Core/HideOnPrefabAttribute/Editor/MoreAttributesEditorAssemblyReference.asmref
+  uploadId: 658664

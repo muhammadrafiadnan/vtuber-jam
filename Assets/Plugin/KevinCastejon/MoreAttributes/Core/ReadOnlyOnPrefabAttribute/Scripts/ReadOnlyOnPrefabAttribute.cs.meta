@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: de77412fb8c4f3e4aa76d2405ad8a084
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 229818
+  packageName: More Attributes
+  packageVersion: 1.1
+  assetPath: Assets/KevinCastejon/MoreAttributes/Core/ReadOnlyOnPrefabAttribute/Scripts/ReadOnlyOnPrefabAttribute.cs
+  uploadId: 658664

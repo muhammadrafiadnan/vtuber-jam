@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: c02455baf84f7f949a671d2f641cfcbe
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 229818
+  packageName: More Attributes
+  packageVersion: 1.1
+  assetPath: Assets/KevinCastejon/MoreAttributes/Core/HeaderPlusAttribute/Editor/HeaderPlusDrawer.cs
+  uploadId: 658664

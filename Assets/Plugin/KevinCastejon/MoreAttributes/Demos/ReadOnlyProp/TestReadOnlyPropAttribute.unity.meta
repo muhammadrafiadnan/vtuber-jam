@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: c6886a47beac6c342b611c52c2b7c124
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 229818
+  packageName: More Attributes
+  packageVersion: 1.1
+  assetPath: Assets/KevinCastejon/MoreAttributes/Demos/ReadOnlyProp/TestReadOnlyPropAttribute.unity
+  uploadId: 658664

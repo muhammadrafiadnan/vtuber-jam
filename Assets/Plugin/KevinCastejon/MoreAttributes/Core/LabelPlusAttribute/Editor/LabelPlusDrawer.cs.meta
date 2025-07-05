@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: e9428e4f54f67284eaf2e928633cea69
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 229818
+  packageName: More Attributes
+  packageVersion: 1.1
+  assetPath: Assets/KevinCastejon/MoreAttributes/Core/LabelPlusAttribute/Editor/LabelPlusDrawer.cs
+  uploadId: 658664

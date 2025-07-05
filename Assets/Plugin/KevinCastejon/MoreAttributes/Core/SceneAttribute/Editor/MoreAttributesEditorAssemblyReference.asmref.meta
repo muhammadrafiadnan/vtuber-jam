@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 2dcbce673e8aa514b88b0cd0785657ce
+AssemblyDefinitionReferenceImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 229818
+  packageName: More Attributes
+  packageVersion: 1.1
+  assetPath: Assets/KevinCastejon/MoreAttributes/Core/SceneAttribute/Editor/MoreAttributesEditorAssemblyReference.asmref
+  uploadId: 658664

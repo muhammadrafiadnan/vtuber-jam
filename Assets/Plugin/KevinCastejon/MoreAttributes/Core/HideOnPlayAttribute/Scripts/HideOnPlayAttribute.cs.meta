@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 7ea732cbefabe3f4e9252584d77b3f1d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 229818
+  packageName: More Attributes
+  packageVersion: 1.1
+  assetPath: Assets/KevinCastejon/MoreAttributes/Core/HideOnPlayAttribute/Scripts/HideOnPlayAttribute.cs
+  uploadId: 658664

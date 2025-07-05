@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 33d6c21b16bf5e9449ae73701eb2d635
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 229818
+  packageName: More Attributes
+  packageVersion: 1.1
+  assetPath: Assets/KevinCastejon/MoreAttributes/Demos/HideOnPrefab/TestHideOnPrefabAttribute.prefab
+  uploadId: 658664

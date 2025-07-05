@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 50c52b4fd1f71a747b2cee115cb69294
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 229818
+  packageName: More Attributes
+  packageVersion: 1.1
+  assetPath: Assets/KevinCastejon/MoreAttributes/Core/ReadOnlyPropAttribute/Editor/ReadOnlyPropDrawer.cs
+  uploadId: 658664

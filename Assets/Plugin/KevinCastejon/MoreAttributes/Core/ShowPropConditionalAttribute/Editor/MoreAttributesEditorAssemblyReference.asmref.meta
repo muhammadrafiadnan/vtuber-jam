@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 33f417da4bdff9b4aa0304aaa095580d
+AssemblyDefinitionReferenceImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 229818
+  packageName: More Attributes
+  packageVersion: 1.1
+  assetPath: Assets/KevinCastejon/MoreAttributes/Core/ShowPropConditionalAttribute/Editor/MoreAttributesEditorAssemblyReference.asmref
+  uploadId: 658664

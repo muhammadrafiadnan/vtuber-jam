@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: b8969af3f3c8f50468f3b7e11e06d409
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 229818
+  packageName: More Attributes
+  packageVersion: 1.1
+  assetPath: Assets/KevinCastejon/MoreAttributes/Core/SceneAttribute/Scripts/SceneAttribute.cs
+  uploadId: 658664
