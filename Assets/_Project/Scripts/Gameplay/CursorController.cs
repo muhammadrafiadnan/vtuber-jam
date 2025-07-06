@@ -1,4 +1,4 @@
-using System;
+using Echoes.Managers;
 using UnityEngine;
 
 namespace Echoes.Gameplay
@@ -16,6 +16,8 @@ namespace Echoes.Gameplay
             
         private void Update()
         {
+            if (!GameManager.Instance.IsGameStart) return;
+            
             if (Input.GetMouseButtonDown(0))
             {
                 ClickObject();

@@ -1,4 +1,6 @@
+using Echoes.Managers;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Echoes.Puzzle
 {
@@ -8,20 +10,21 @@ namespace Echoes.Puzzle
         [SerializeField] [Range(0, 5)] private int rowNum;
         [SerializeField] [Range(0, 5)] private int columnNum;
         [SerializeField] private LightTile[] lightTiles;
+        [SerializeField] private Button clearButton;
         
         private LightTile[,] _lightTiles;
         
         // Initialize
-        protected override void InitPuzzleStats()
+        protected override void InitOnStart()
         {
-            base.InitPuzzleStats();
+            base.InitOnStart();
             if (!ValidateLight())
             {
                 Debug.Log("invalid tile lights!");
                 return;
             }
             
-            // Init 2D Array
+            // Init 2D array
             var tileIndex = 0;
             _lightTiles = new LightTile[rowNum, columnNum];
             for (var i = 0; i < rowNum; i++)
@@ -33,12 +36,16 @@ namespace Echoes.Puzzle
                     tileIndex++;
                 }
             }
+            
+            // Init button
+            clearButton.onClick.AddListener(ResetPuzzle);
         }
         
         // Core
         public void HandleLights(int row, int column)
         {
-            if (isPuzzleComplete) return;
+            if (!GameManager.Instance.IsGameStart) return;
+            if (!isPuzzleActive || isPuzzleComplete) return;
             
             var selectedTile = _lightTiles[row, column];
             if (selectedTile == null)
@@ -58,8 +65,9 @@ namespace Echoes.Puzzle
             // Checkup puzzle
             if (CheckPuzzleComplete())
             {
-                Debug.Log("clear!!");
                 isPuzzleComplete = true;
+                puzzleManager.CompletePuzzle();
+                puzzleItem.ClearItem();
                 ClosePuzzlePanel();
             }
         }
@@ -78,7 +86,20 @@ namespace Echoes.Puzzle
             
             return lightActiveCount >= lightTiles.Length;
         }
-        
+
+
+        protected override void ResetPuzzle()
+        {
+            base.ResetPuzzle();
+            for (var i = 0; i < rowNum; i++)
+            {
+                for (var j = 0; j < columnNum; j++)
+                {
+                    _lightTiles[i, j].ResetTile();
+                }
+            }
+        }
+
         // Helpers
         private bool ValidateLight()
         {

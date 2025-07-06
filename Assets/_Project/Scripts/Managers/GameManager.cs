@@ -1,3 +1,4 @@
+using UnityEngine;
 using Echoes.Events;
 using Echoes.Pattern;
 
@@ -5,8 +6,12 @@ namespace Echoes.Managers
 {
     public class GameManager : Singleton<GameManager>
     {
+        [Header("UI")] 
+        [SerializeField] private GameObject gameWinPanel;
+        [SerializeField] private GameObject gameLosePanel;
+        
         public bool IsGameStart { get; private set; }
-
+        
         private void OnEnable()
         {
             GameEvents.OnGameStart += GameStart;
@@ -20,25 +25,30 @@ namespace Echoes.Managers
             GameEvents.OnGameWin -= GameWin;
             GameEvents.OnGameLose -= GameLose;
         }
-
+        
+        // TODO: Drop ini klo selesai
         private void Start()
         {
-            IsGameStart = false;
+            GameEvents.GameStartEvent();
         }
 
+        // Core
         private void GameStart()
         {
             IsGameStart = true;
         }
-
+        
         private void GameWin()
         {
+            // Win
             IsGameStart = false;
+            gameWinPanel.SetActive(true);
         }
-
+        
         private void GameLose()
         {
             IsGameStart = false;
+            gameLosePanel.SetActive(true);
         }
     }
 }

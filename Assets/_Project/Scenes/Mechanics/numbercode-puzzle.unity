@@ -400,7 +400,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &184361822
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1007,9 +1007,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e628042d8265a924ba12f120dc0a64c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberPad: {fileID: 184361821}
-  codeText: {fileID: 329999125}
+  puzzleWindowUI: {fileID: 0}
+  puzzleItem: {fileID: 0}
   correctCode: 367432
+  codeTextUI: {fileID: 0}
 --- !u!1 &583476949
 GameObject:
   m_ObjectHideFlags: 0
