@@ -10,21 +10,21 @@ namespace Echoes.UI
 
         void Start()
         {
-            int levelAt = PlayerPrefs.GetInt("levelAt", 3);
+            int levelAt = PlayerPrefs.GetInt("levelAt", 2);
 
             for (int i = 0; i < lvlButtons.Length; i++)
             {
-                if (i + 3 > levelAt)
+                if (i + 2 > levelAt)
                 {
                     lvlButtons[i].interactable = false;
                 }
             }
         }
-        /*public void resetLevel()
+        public void resetLevel()
         {
             PlayerPrefs.DeleteKey("LevelAt");
             SceneManager.LoadScene(0);
-        }*/
+        }
     }
 
 }

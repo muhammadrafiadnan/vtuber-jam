@@ -9,5 +9,14 @@ namespace Echoes.UI
         {
             SceneManager.LoadScene(scene);
         }
+        public void NewGame(int scene)
+        {
+            PlayerPrefs.DeleteKey("LevelAt");
+            SceneManager.LoadScene(scene);
+        }
+        public void QuitGame()
+        {
+            Application.Quit();
+        }
     }
 }
