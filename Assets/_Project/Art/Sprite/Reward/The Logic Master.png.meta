@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      The Logic Master_0: 4629313501924602719
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

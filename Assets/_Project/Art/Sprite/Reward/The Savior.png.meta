@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      The Savior_0: -7633748545641060391
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
