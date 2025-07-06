@@ -159,6 +159,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 211426032}
+  - component: {fileID: 211426033}
   m_Layer: 0
   m_Name: CursorController
   m_TagString: Untagged
@@ -181,6 +182,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &211426033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211426031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f69899e6736467b9582bdf2eadbe911, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &338739082
 GameObject:
   m_ObjectHideFlags: 0
@@ -907,8 +920,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Code Lock
-  isActive: 1
-  puzzlePanelUI: {fileID: 0}
+  puzzleBase: {fileID: 0}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1640,7 +1652,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1283202802}
-  - component: {fileID: 1283202803}
   m_Layer: 0
   m_Name: --- Managers ---
   m_TagString: EditorOnly
@@ -1663,18 +1674,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1283202803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1283202801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f69899e6736467b9582bdf2eadbe911, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1356302999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1831,6 +1830,7 @@ GameObject:
   - component: {fileID: 1459713868}
   - component: {fileID: 1459713867}
   - component: {fileID: 1459713866}
+  - component: {fileID: 1459713869}
   m_Layer: 5
   m_Name: LightPuzzle
   m_TagString: Untagged
@@ -1870,7 +1870,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 698007edd3195304ea910004c50dbec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puzzlePanelUI: {fileID: 1459713864}
+  puzzleWindowUI: {fileID: 1015654134}
+  puzzleItem: {fileID: 1488057247}
   rowNum: 3
   columnNum: 3
   lightTiles:
@@ -1883,6 +1884,7 @@ MonoBehaviour:
   - {fileID: 734487475}
   - {fileID: 1766627680}
   - {fileID: 1928920959}
+  clearButton: {fileID: 637807102}
 --- !u!114 &1459713867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1921,6 +1923,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1459713864}
   m_CullTransparentMesh: 1
+--- !u!114 &1459713869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459713864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5e767aa08d340d89e3b436dc6a5dd67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tweenDuration: 0.3
+  bounceDuration: 0.1
+  easeType: 3
+  targetScale: {x: 3.7, y: 3.7, z: 3.7}
+  upperScale: {x: 4, y: 4, z: 4}
 --- !u!1 &1488057242
 GameObject:
   m_ObjectHideFlags: 0
@@ -2014,8 +2033,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Light Lock
-  isActive: 1
-  puzzlePanelUI: {fileID: 1459713864}
+  puzzleBase: {fileID: 1459713866}
 --- !u!1001 &1709282535
 PrefabInstance:
   m_ObjectHideFlags: 0

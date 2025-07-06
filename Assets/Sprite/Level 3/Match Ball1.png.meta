@@ -235,7 +235,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Match Ball1_0: -6388990159254951386
+      Match Ball1_1: -7262431658313897719
+      Match Ball1_2: 3341975216990942461
+      Match Ball1_3: 8446237246082751745
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

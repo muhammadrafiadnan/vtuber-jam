@@ -1,4 +1,5 @@
 using UnityEngine;
+using Echoes.Puzzle;
 
 namespace Echoes.Gameplay
 {
@@ -6,15 +7,16 @@ namespace Echoes.Gameplay
     {
         [Header("Stats")] 
         [SerializeField] private string itemName;
-        [SerializeField] private bool isActive = true;
+        [SerializeField] private PuzzleBase puzzleBase;
         
-        [Space]
-        [SerializeField] private GameObject puzzlePanelUI;
-
         public void ClickItem()
         {
-            Debug.unityLogger.Log("ClickItem");
-            // puzzlePanelUI.SetActive(true);
+            puzzleBase.OpenPuzzlePanel();
+        }
+        
+        public void ClearItem()
+        {
+            gameObject.SetActive(false);
         }
 
     }
