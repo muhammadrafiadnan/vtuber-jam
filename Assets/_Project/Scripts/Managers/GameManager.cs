@@ -26,11 +26,13 @@ namespace Echoes.Managers
             GameEvents.OnGameLose -= GameLose;
         }
         
+        // TODO: Drop ini klo selesai
         private void Start()
         {
-            IsGameStart = false;
+            GameEvents.GameStartEvent();
         }
-        
+
+        // Core
         private void GameStart()
         {
             IsGameStart = true;
@@ -38,12 +40,15 @@ namespace Echoes.Managers
         
         private void GameWin()
         {
+            // Win
             IsGameStart = false;
+            gameWinPanel.SetActive(true);
         }
-
+        
         private void GameLose()
         {
             IsGameStart = false;
+            gameLosePanel.SetActive(true);
         }
     }
 }

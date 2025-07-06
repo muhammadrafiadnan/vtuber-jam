@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using Echoes.Events;
+using Echoes.Managers;
 
 namespace Echoes.Gameplay
 {
@@ -19,14 +20,14 @@ namespace Echoes.Gameplay
         
         private void Update()
         {
+            if (_currentTime == 0f || !GameManager.Instance.IsGameStart) return;
+            
             HandleTimer();
             HandleTimerText();
         }
         
         private void HandleTimer()
         {
-            if (_currentTime == 0f) return;
-            
             _currentTime -= Time.deltaTime;
             if (_currentTime <= 0f)
             {

@@ -1,3 +1,4 @@
+using Echoes.Managers;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -43,6 +44,7 @@ namespace Echoes.Puzzle
         // Core
         public void HandleLights(int row, int column)
         {
+            if (!GameManager.Instance.IsGameStart) return;
             if (!isPuzzleActive || isPuzzleComplete) return;
             
             var selectedTile = _lightTiles[row, column];

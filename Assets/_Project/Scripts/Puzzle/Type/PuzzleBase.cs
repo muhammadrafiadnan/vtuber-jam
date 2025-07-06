@@ -1,5 +1,6 @@
 using UnityEngine;
 using Echoes.Gameplay;
+using Echoes.Managers;
 
 namespace Echoes.Puzzle
 {
@@ -47,7 +48,9 @@ namespace Echoes.Puzzle
         
         protected virtual void ModifyOnUpdate()
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (!GameManager.Instance.IsGameStart) return;
+            
+            if (Input.GetKeyDown(KeyCode.Escape) && isPuzzleActive)
             {
                 ClosePuzzlePanel();
             }
@@ -61,9 +64,8 @@ namespace Echoes.Puzzle
         
         public void OpenPuzzlePanel()
         {
-            if (gameObject.activeSelf) return;
+            if (gameObject.activeSelf || !GameManager.Instance.IsGameStart) return;
             
-            isPuzzleActive = false;
             gameObject.SetActive(true);
             _puzzleAnim.AnimateInPuzzle(puzzleWindowUI, () => isPuzzleActive = true);
         }

@@ -5,16 +5,16 @@ namespace Echoes.Pattern
 {
     public class Singleton<T> : MonoBehaviour where T : Singleton<T>
     {
-        public static T instance;
+        public static T Instance;
         
         private void Awake()
         {
-            if (instance == null)
+            if (Instance == null)
             {
                 Destroy(gameObject);
             }
             
-            instance = this as T;
+            Instance = this as T;
             DontDestroyOnLoad(gameObject);
         }
     }
