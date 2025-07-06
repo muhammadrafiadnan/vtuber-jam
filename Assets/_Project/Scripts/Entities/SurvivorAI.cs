@@ -11,8 +11,6 @@ namespace Echoes.Entities
         [SerializeField] private SurvivorState currentState;
         [SerializeField] private bool isFacingRight;
         
-        public bool IsFacingRight => isFacingRight;
-        
         [Header("Reference")]
         [SerializeField] private Animator survivorAnim;
         

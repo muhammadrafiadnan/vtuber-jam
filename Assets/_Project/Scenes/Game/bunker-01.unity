@@ -2243,6 +2243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 180
+  decreasedTime: 30
   timeTextUI: {fileID: 338739084}
 --- !u!1 &1137501604
 GameObject:

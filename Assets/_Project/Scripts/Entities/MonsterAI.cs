@@ -1,7 +1,8 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Echoes.Events;
+
 using Random = UnityEngine.Random;
 
 namespace Echoes.Entities
@@ -12,20 +13,44 @@ namespace Echoes.Entities
         [SerializeField] private string monsterName;
         [SerializeField] private float moveSpeed;
         [SerializeField] private Transform[] pointTransforms;
-
-        [Header("Eater")] 
         [SerializeField] private List<SurvivorAI> survivors;
+
+        private readonly List<SurvivorAI> _tempSurvivors = new();
+
+        private void OnEnable()
+        {
+            TimeEvents.OnTimerEnded += MoveMonster;
+            TimeEvents.OnTimerReStarted += InitMonster;
+        }
+        
+        private void OnDisable()
+        {
+            TimeEvents.OnTimerEnded -= MoveMonster;
+            TimeEvents.OnTimerReStarted -= InitMonster;
+        }
         
         private void Start()
         {
-            gameObject.name = monsterName;
-            transform.position = pointTransforms[0].position;
+            InitMonster();
         }
         
-        public IEnumerator MoveMonsterRoutine()
+        private void InitMonster()
+        {
+            gameObject.name = monsterName;
+            transform.position = pointTransforms[0].position;
+            foreach (var survivor in survivors)
+            {
+                survivor.gameObject.SetActive(true);
+                _tempSurvivors.Add(survivor);
+            }
+        }
+        
+        private void MoveMonster() => StartCoroutine(MoveMonsterRoutine());
+        
+        private IEnumerator MoveMonsterRoutine()
         {
             var targetPos = pointTransforms[1].position;
-            var survivor = survivors[Random.Range(0,  survivors.Count)];
+            var survivor = _tempSurvivors[Random.Range(0,  _tempSurvivors.Count)];
             var survivorPos = new Vector2(survivor.transform.position.x, transform.position.y);
             
             while (Vector2.Distance(transform.position, pointTransforms[1].position) > 0.1f)
@@ -35,14 +60,16 @@ namespace Echoes.Entities
                 if (Vector2.Distance(transform.position, survivorPos) <= 0.1f)
                 {
                     survivor.gameObject.SetActive(false);
-                    survivors.Remove(survivor);
+                    _tempSurvivors.Remove(survivor);
                 }
                 yield return null;
             }
             
             transform.position = pointTransforms[0].position;
+
+            yield return new WaitForSeconds(1f);
+            GameEvents.GameStartEvent();
+            TimeEvents.TimerReStartedEvent();
         }
-        
-        
     }
 }

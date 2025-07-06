@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using TMPro;
 using Echoes.Events;
@@ -9,9 +10,20 @@ namespace Echoes.Gameplay
     {
         [Header("Stats")]
         [SerializeField] [Tooltip("Isi dalam jumlah detik")] private float time;
+        [SerializeField] private float decreasedTime;
         [SerializeField] private TextMeshProUGUI timeTextUI;
-
+        
         private float _currentTime;
+        
+        private void OnEnable()
+        {
+            TimeEvents.OnTimerReStarted += ModifyTimeAfterDie;
+        }
+        
+        private void OnDisable()
+        {
+            TimeEvents.OnTimerReStarted -= ModifyTimeAfterDie;
+        }
 
         private void Start()
         {
@@ -20,7 +32,8 @@ namespace Echoes.Gameplay
         
         private void Update()
         {
-            if (_currentTime == 0f || !GameManager.Instance.IsGameStart) return;
+            if (!GameManager.Instance.IsGameStart) return;
+            if (_currentTime == 0f) return;
             
             HandleTimer();
             HandleTimerText();
@@ -32,7 +45,8 @@ namespace Echoes.Gameplay
             if (_currentTime <= 0f)
             {
                 _currentTime = 0f;
-                GameEvents.GameLoseEvent();
+                GameEvents.GameDelayEvent();
+                TimeEvents.TimerEndedEvent();
             }
         }
         
@@ -42,6 +56,12 @@ namespace Echoes.Gameplay
             var second = Mathf.FloorToInt(_currentTime % 60f);
             
             timeTextUI.text = $"{minute:00}:{second:00}";
+        }
+
+        private void ModifyTimeAfterDie()
+        {
+            _currentTime = time;
+            _currentTime -= decreasedTime;
         }
     }
 }
