@@ -37,8 +37,8 @@ namespace Echoes.Gameplay
                 if (rayHit.collider == null) return;
                 if (rayHit.collider.CompareTag("Item"))
                 {
-                    var rayHitInterface = rayHit.collider.GetComponent<ItemController>();
-                    rayHitInterface.ClickItem();
+                    var rayHitInterface = rayHit.collider.GetComponent<IClickable>();
+                    rayHitInterface.Click();
                 }
             }
         }
