@@ -6,7 +6,6 @@ namespace Echoes.Gameplay
 
     public class NextLevel : MonoBehaviour
     {
-        public GameObject finish;
         public int nextSceneLoad;
         public static NextLevel singleton;
 
@@ -18,12 +17,6 @@ namespace Echoes.Gameplay
         {
             nextSceneLoad = SceneManager.GetActiveScene().buildIndex + 1;
             Time.timeScale = 1;
-        }
-
-        public void Finish()
-        {
-            finish.SetActive(true);
-            Time.timeScale = 0;
         }
         public void Play()
         {

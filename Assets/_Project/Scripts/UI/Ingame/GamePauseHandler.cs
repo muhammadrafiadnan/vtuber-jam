@@ -22,21 +22,21 @@ namespace Echoes.UI
             resumeButtonUI.onClick.AddListener(OnResumeButton);
         }
         
-        private void OnPauseButton()
+        public void OnPauseButton()
         {
             // AudioManager.Instance.PlayAudio(Musics.ButtonSfx);
             pausePanelUI.SetActive(true);
             Time.timeScale = 0;
         }
         
-        private void OnResumeButton()
+        public void OnResumeButton()
         {
             // AudioManager.Instance.PlayAudio(Musics.ButtonSfx);
             pausePanelUI.SetActive(false);
             Time.timeScale = 1;
         }
         
-        private void OnRetryButton()
+        public void OnRetryButton()
         {
             // AudioManager.Instance.PlayAudio(Musics.ButtonSfx);
             // SceneTransitionManager.Instance.LoadSelectedScene(SceneState.CurrentLevel);
