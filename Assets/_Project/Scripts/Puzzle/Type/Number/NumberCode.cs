@@ -46,6 +46,7 @@ namespace Echoes.Puzzle
             if(codeTextValue == correctCode)
             {
                 Debug.Log("Clear!!");
+                NumberPad.SetActive(false);
             }
             else
             {
