@@ -77,7 +77,7 @@ namespace Echoes.Puzzle
 
                 if (isMainBlock && currentGridPos == new Vector2Int(1, 3))
                 {
-                    Debug.Log("Clear!");
+                    BlockManager.Instance.ClearPuzzle();
                 }
             }
             else

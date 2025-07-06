@@ -1,10 +1,8 @@
-using UnityEditor.Rendering;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 namespace Echoes.Puzzle
 {
-    public class PipeManager : MonoBehaviour
+    public class PipeManager : PuzzleBase
     {
         public GameObject pipeHolder;
         public GameObject[] Pipes;
@@ -16,8 +14,9 @@ namespace Echoes.Puzzle
 
         public static PipeManager singleton;
 
-        private void Start()
+        protected override void InitOnStart()
         {
+            base.InitOnStart();
             singleton = this;
             totalPipes = pipeHolder.transform.childCount;
 
@@ -28,13 +27,22 @@ namespace Echoes.Puzzle
                 Pipes[i] = pipeHolder.transform.GetChild(i).gameObject;
             }
         }
+
+        protected override bool CheckPuzzleComplete()
+        {
+            return correctPipes == totalPipesTrue;
+        }
+
         public void CorrectMove()
         {
             correctPipes += 1;
-
-            if(correctPipes == totalPipesTrue)
+            if(CheckPuzzleComplete())
             {
                 Debug.Log("Clear!");
+                isPuzzleComplete = true;
+                puzzleManager.CompletePuzzle();
+                puzzleItem.ClearItem();
+                ClosePuzzlePanel();
             }
         }
         public void WrongMove()

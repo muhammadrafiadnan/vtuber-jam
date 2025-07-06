@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace Echoes.Puzzle
 {
-    public class ImagePuzzle : MonoBehaviour
+    public class ImagePuzzle : PuzzleBase
     {
         public Sprite[] tileSprites;
         public GameObject tilePrefab;
@@ -13,10 +13,42 @@ namespace Echoes.Puzzle
         private GameObject[,] tiles = new GameObject[4, 4];
         private Vector2Int emptyTilePos = new Vector2Int(3, 3);
 
-        void Start()
+
+        protected override void InitOnStart()
         {
+            base.InitOnStart();
             InitPuzzle();
             ShuffleTiles();
+        }
+        
+        protected override bool CheckPuzzleComplete()
+        {
+            var expectedIndex = 0;
+
+            for (int y = 0; y < 4; y++)
+            {
+                for (int x = 0; x < 4; x++)
+                {
+                    if (x == 3 && y == 3)
+                    {
+                        if (tiles[x, y] != null)
+                            return false;
+                        continue;
+                    }
+
+                    GameObject tile = tiles[x, y];
+                    if (tile == null)
+                        return false;
+
+                    Image img = tile.GetComponent<Image>();
+                    if (img.sprite != tileSprites[expectedIndex])
+                        return false;
+
+                    expectedIndex++;
+                }
+            } 
+            
+            return true;
         }
 
         void InitPuzzle()
@@ -59,7 +91,15 @@ namespace Echoes.Puzzle
 
                 emptyTilePos = tilePos;
             }
-            CheckWin();
+            
+            // Check complete
+            if (CheckPuzzleComplete())
+            {
+                isPuzzleComplete = true;
+                puzzleManager.CompletePuzzle();
+                puzzleItem.ClearItem();
+                ClosePuzzlePanel();
+            }
         }
 
         Vector2Int GetTilePosition(GameObject tile)
@@ -120,34 +160,6 @@ namespace Echoes.Puzzle
                 RectTransform rect = tempTiles[i].GetComponent<RectTransform>();
                 rect.anchoredPosition = GetTilePositionFromGrid(pos);
             }
-        }
-        void CheckWin()
-        {
-            int expectedIndex = 0;
-
-            for (int y = 0; y < 4; y++)
-            {
-                for (int x = 0; x < 4; x++)
-                {
-                    if (x == 3 && y == 3)
-                    {
-                        if (tiles[x, y] != null)
-                            return;
-                        continue;
-                    }
-
-                    GameObject tile = tiles[x, y];
-                    if (tile == null)
-                        return;
-
-                    Image img = tile.GetComponent<Image>();
-                    if (img.sprite != tileSprites[expectedIndex])
-                        return;
-
-                    expectedIndex++;
-                }
-            }
-            Debug.Log("Clear!");
         }
     }
 }

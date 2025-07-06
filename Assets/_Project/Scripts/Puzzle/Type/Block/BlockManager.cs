@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace Echoes.Puzzle
 {
-    public class BlockManager : MonoBehaviour
+    public class BlockManager : PuzzleBase
     {
         public static BlockManager Instance;
 
@@ -19,10 +19,29 @@ namespace Echoes.Puzzle
 
         public bool[,] gridOccupied;
 
-        private void Awake()
+        protected override void InitOnAwake()
         {
+            base.InitOnAwake();
             Instance = this;
+        }
+
+        protected override void InitOnStart()
+        {
+            base.InitOnStart();
             gridOccupied = new bool[rows, cols];
+        }
+
+        public void ClearPuzzle()
+        {
+            isPuzzleComplete = true;
+            puzzleManager.CompletePuzzle();
+            puzzleItem.ClearItem();
+            ClosePuzzlePanel();
+        }
+        
+        protected override bool CheckPuzzleComplete()
+        {
+            return true;
         }
 
         void SpawnBlock(GameObject prefab, Vector2Int gridPos, Vector2Int size)
