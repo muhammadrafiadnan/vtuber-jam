@@ -1,6 +1,7 @@
 using System.Collections;
-using Echoes.Events;
 using UnityEngine;
+using Echoes.Events;
+using Echoes.Entities;
 
 namespace Echoes.Puzzle
 {
@@ -9,10 +10,10 @@ namespace Echoes.Puzzle
         [Header("Puzzle")]
         [SerializeField] private PuzzleBase[] puzzles;
         private int _clearPuzzleCount;
-
+        
         [Header("Sequence")] 
         [SerializeField] private Animator doorAnimator;
-        [SerializeField] private GameObject[] charactersObject;
+        [SerializeField] private SurvivorAI[] survivors;
         
         private const string OPEN_DOOR = "Open";
         
@@ -26,7 +27,7 @@ namespace Echoes.Puzzle
                 puzzle.InjectManager(this);
             }
         }
-        
+
         // Core
         public void CompletePuzzle()
         {
@@ -42,7 +43,18 @@ namespace Echoes.Puzzle
             var animationTime = doorAnimator.GetCurrentAnimatorClipInfo(0).Length;
             
             yield return new WaitForSeconds(animationTime);
-            // TODO: Animate NPCs lari ke pintu
+            
+            var doorPos = doorAnimator.transform.position;
+            foreach (var survivor in survivors)
+            {
+                survivor.CheckDirection(doorPos.x);
+                yield return new WaitForSeconds(0.25f);
+                
+                yield return survivor.MoveToPointRoutine(5.5f, doorPos, () =>
+                {
+                    survivor.gameObject.SetActive(false);
+                });
+            }
             
             GameEvents.GameWinEvent();
         }
