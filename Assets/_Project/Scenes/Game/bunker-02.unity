@@ -2751,6 +2751,7 @@ GameObject:
   - component: {fileID: 1366202501}
   - component: {fileID: 1366202500}
   - component: {fileID: 1366202502}
+  - component: {fileID: 1366202503}
   m_Layer: 5
   m_Name: BlockLayout
   m_TagString: Untagged
@@ -2839,6 +2840,23 @@ MonoBehaviour:
   block1x2: {fileID: 5004841474757176896, guid: 5ff66a8b91733c14aa8dd869ecbb9df0, type: 3}
   block2x1: {fileID: 8546296386109281402, guid: 39f08f118494b104fbf850a3f1a9fed2, type: 3}
   block2x2: {fileID: 1035958603798244503, guid: 61a5001b4137ecd41a3f201faa61c7a2, type: 3}
+--- !u!114 &1366202503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366202498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5e767aa08d340d89e3b436dc6a5dd67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tweenDuration: 0.3
+  bounceDuration: 0.1
+  easeType: 3
+  targetScale: {x: 15, y: 15, z: 15}
+  upperScale: {x: 15.5, y: 15.5, z: 15.5}
 --- !u!224 &1393586448 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9221839022029108824, guid: 47cd7a02d0c42954999df04642f7ad5c, type: 3}
@@ -3098,6 +3116,7 @@ GameObject:
   - component: {fileID: 1552851327}
   - component: {fileID: 1552851326}
   - component: {fileID: 1552851328}
+  - component: {fileID: 1552851329}
   m_Layer: 5
   m_Name: ImagePuzzle
   m_TagString: Untagged
@@ -3196,6 +3215,23 @@ MonoBehaviour:
   tilePrefab: {fileID: 1913444927118284466, guid: be69e5bb0f48c9f41a5fc347dc0e7b8f, type: 3}
   puzzleContainer: {fileID: 219315052}
   tileSize: 4.5
+--- !u!114 &1552851329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552851324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5e767aa08d340d89e3b436dc6a5dd67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tweenDuration: 0.3
+  bounceDuration: 0.1
+  easeType: 3
+  targetScale: {x: 14, y: 14, z: 14}
+  upperScale: {x: 14.5, y: 14.5, z: 14.5}
 --- !u!1 &1597151902
 GameObject:
   m_ObjectHideFlags: 0
