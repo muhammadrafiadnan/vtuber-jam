@@ -9,15 +9,7 @@ namespace Echoes.Gameplay
         [SerializeField] private string itemName;
         [SerializeField] private PuzzleBase puzzleBase;
         
-        public void ClickItem()
-        {
-            puzzleBase.OpenPuzzlePanel();
-        }
-        
-        public void ClearItem()
-        {
-            gameObject.SetActive(false);
-        }
-
+        public void ClickItem() => puzzleBase.OpenPuzzlePanel();
+        public void ClearItem() => gameObject.SetActive(false);
     }
 }

@@ -14,9 +14,9 @@ namespace Echoes.Puzzle
         private LightTile[,] _lightTiles;
         
         // Initialize
-        protected override void InitPuzzleStats()
+        protected override void InitOnStart()
         {
-            base.InitPuzzleStats();
+            base.InitOnStart();
             if (!ValidateLight())
             {
                 Debug.Log("invalid tile lights!");
@@ -61,10 +61,17 @@ namespace Echoes.Puzzle
             if (row + 1 < rowNum) _lightTiles[row  + 1, column].ToggleTile();
             
             // Checkup puzzle
+            if (CheckPuzzleComplete())
+            {
+                isPuzzleComplete = true;
+                puzzleItem.ClearItem();
+                ClosePuzzlePanel();
+            }
+
             CheckPuzzleComplete();
         }
         
-        protected override void CheckPuzzleComplete()
+        protected override bool CheckPuzzleComplete()
         {
             var lightActiveCount = 0;
             for (var i = 0; i < rowNum; i++)
@@ -76,13 +83,7 @@ namespace Echoes.Puzzle
                 }
             }
             
-            // Check clear
-            if (lightActiveCount >= lightTiles.Length)
-            {
-                isPuzzleComplete = true;
-                puzzleItem.ClearItem();
-                ClosePuzzlePanel();
-            }
+            return lightActiveCount >= lightTiles.Length;
         }
 
 

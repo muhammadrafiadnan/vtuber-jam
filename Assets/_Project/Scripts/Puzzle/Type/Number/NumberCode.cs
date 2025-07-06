@@ -1,61 +1,57 @@
 using UnityEngine;
 using TMPro;
-using System;
 
 namespace Echoes.Puzzle
 {
-    public class NumberCode : MonoBehaviour
+    public class NumberCode : PuzzleBase
     {
-        public GameObject NumberPad;
-        private SpriteRenderer spriteRenderer;
-
-        [SerializeField] private TextMeshProUGUI codeText;
+        [Header("Attributes")]
         [SerializeField] private string correctCode;
+        [SerializeField] private TextMeshProUGUI codeTextUI;
 
-        string codeTextValue = "";
+        private string _codeTextValue = "";
 
-        private void Awake()
+        // Initialize
+        protected override void InitOnStart()
         {
-            spriteRenderer = GetComponent<SpriteRenderer>();
+            base.InitOnStart();
+            codeTextUI.text = _codeTextValue;
         }
-        private void Start()
-        {
-            UpdateDisplay();
-        }
-
-        public void OnMouseDown()
-        {
-            NumberPad.SetActive(true);
-        }
-
+        
+        // Core
         public void AddDigit(string digit)
         {
-            if (codeTextValue.Length < correctCode.Length)
+            if (_codeTextValue.Length < correctCode.Length)
             {
-                codeTextValue += digit;
-                UpdateDisplay();
+                _codeTextValue += digit;
+                codeTextUI.text = _codeTextValue;
             }
         }
+        
         public void ClearCode()
         {
-            codeTextValue = "";
-            UpdateDisplay();
+            _codeTextValue = "";
+            codeTextUI.text = _codeTextValue;
         }
+        
         public void SubmitCode()
         {
-            if(codeTextValue == correctCode)
+            if (CheckPuzzleComplete())
             {
-                Debug.Log("Clear!!");
-                NumberPad.SetActive(false);
+                Debug.Log("puzzle clear!");
+                isPuzzleComplete = true;
+                puzzleItem.ClearItem();
+                ClosePuzzlePanel();
             }
             else
             {
-                Debug.Log("Wrong Code!");
+                Debug.Log("wrong code bro!");
             }
         }
-        private void UpdateDisplay()
+        
+        protected override bool CheckPuzzleComplete()
         {
-            codeText.text = codeTextValue;
+            return _codeTextValue == correctCode;
         }
     }
 }

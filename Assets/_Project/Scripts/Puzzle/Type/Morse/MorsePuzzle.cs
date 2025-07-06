@@ -3,48 +3,52 @@ using UnityEngine;
 
 namespace Echoes.Puzzle
 {
-    public class MorsePuzzle : MonoBehaviour
+    public class MorsePuzzle : PuzzleBase
     {
+        [Header("Attributes")]
         [SerializeField] private TextMeshProUGUI inputDisplayText;
-
         [SerializeField] private string targetCode = "OPEN";
-
         [SerializeField] private int maxInputLength;
 
-        private string currentInput = "";
+        private string _currentInput = "";
 
-        void Update()
+        // Methods
+        protected override void ModifyOnUpdate()
         {
-            foreach (char key in Input.inputString)
+            base.ModifyOnUpdate();
+            foreach (var key in Input.inputString)
             {
-                if (char.IsLetterOrDigit(key) && currentInput.Length < maxInputLength)
+                if (char.IsLetterOrDigit(key) && _currentInput.Length < maxInputLength)
                 {
-                    currentInput += char.ToUpper(key);
+                    _currentInput += char.ToUpper(key);
                 }
-                else if (key == '\b' && currentInput.Length > 0)
+                else if (key == '\b' && _currentInput.Length > 0)
                 {
-                    currentInput = currentInput.Substring(0, currentInput.Length - 1);
+                    _currentInput = _currentInput.Substring(0, _currentInput.Length - 1);
                 }
             }
 
-            inputDisplayText.text = currentInput;
+            inputDisplayText.text = _currentInput;
 
             if (Input.GetKeyDown(KeyCode.Return))
             {
-                CheckInputCode();
+                if (CheckPuzzleComplete())
+                {
+                    Debug.Log("puzzle clear!");
+                    isPuzzleComplete = true;
+                    puzzleItem.ClearItem();
+                    ClosePuzzlePanel();
+                }
+                else
+                { 
+                    Debug.Log("wrong code bro!");
+                }
             }
         }
-
-        void CheckInputCode()
+        
+        protected override bool CheckPuzzleComplete()
         {
-            if (currentInput == targetCode)
-            {
-                Debug.Log("Clear!");
-            }
-            else
-            {
-                Debug.Log("Wrong Code!");
-            }
+            return _currentInput == targetCode;
         }
     }
 }
