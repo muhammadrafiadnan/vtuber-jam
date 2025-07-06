@@ -311,7 +311,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   doorAnimator: {fileID: 0}
-  charactersObject: []
+  survivors: []
 --- !u!1001 &152097140
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1863,6 +1863,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 180
+  decreasedTime: 0
   timeTextUI: {fileID: 338739084}
 --- !u!1001 &1040978477
 PrefabInstance:
