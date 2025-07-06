@@ -23,7 +23,7 @@ namespace Echoes.Puzzle
                 return;
             }
             
-            // Init 2D Array
+            // Init 2D array
             var tileIndex = 0;
             _lightTiles = new LightTile[rowNum, columnNum];
             for (var i = 0; i < rowNum; i++)

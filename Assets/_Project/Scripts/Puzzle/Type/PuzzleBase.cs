@@ -1,5 +1,5 @@
-using Echoes.Gameplay;
 using UnityEngine;
+using Echoes.Gameplay;
 
 namespace Echoes.Puzzle
 {
@@ -59,13 +59,17 @@ namespace Echoes.Puzzle
         
         public void OpenPuzzlePanel()
         {
+            if (gameObject.activeSelf) return;
+            
             isPuzzleActive = false;
             gameObject.SetActive(true);
             _puzzleAnim.AnimateInPuzzle(puzzleWindowUI, () => isPuzzleActive = true);
         }
-
+        
         protected void ClosePuzzlePanel()
         {
+            if (!gameObject.activeSelf) return;
+            
             isPuzzleActive = false;
             _puzzleAnim.AnimateOutPuzzle(ResetPuzzle);
         }
