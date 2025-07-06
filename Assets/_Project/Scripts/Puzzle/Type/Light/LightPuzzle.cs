@@ -64,11 +64,10 @@ namespace Echoes.Puzzle
             if (CheckPuzzleComplete())
             {
                 isPuzzleComplete = true;
+                puzzleManager.CompletePuzzle();
                 puzzleItem.ClearItem();
                 ClosePuzzlePanel();
             }
-
-            CheckPuzzleComplete();
         }
         
         protected override bool CheckPuzzleComplete()

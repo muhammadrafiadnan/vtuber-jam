@@ -50,8 +50,10 @@ namespace Echoes.Puzzle
             yield return new WaitForSeconds(0.5f);
             
             isPuzzleComplete = true;
+            puzzleManager.CompletePuzzle();
             puzzleItem.ClearItem();
             ClosePuzzlePanel();
+            
         }
         
         private IEnumerator AnimateWrongText()

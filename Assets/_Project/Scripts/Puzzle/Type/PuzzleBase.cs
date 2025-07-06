@@ -12,9 +12,10 @@ namespace Echoes.Puzzle
         protected bool isPuzzleActive;
         protected bool isPuzzleComplete;
         public bool IsPuzzleComplete => isPuzzleComplete;
-
+        
         // Reference
         private PuzzleAnimation _puzzleAnim;
+        protected PuzzleManager puzzleManager;
 
         // Unity Callbacks
         private void Awake()
@@ -33,7 +34,6 @@ namespace Echoes.Puzzle
         }
 
         // Initialize
-
         protected virtual void InitOnAwake()
         {
             _puzzleAnim = GetComponent<PuzzleAnimation>();
@@ -52,6 +52,8 @@ namespace Echoes.Puzzle
                 ClosePuzzlePanel();
             }
         }
+        
+        public void InjectManager(PuzzleManager manager) => puzzleManager = manager;
         
         // Core
         protected abstract bool CheckPuzzleComplete();
