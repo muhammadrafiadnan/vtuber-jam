@@ -11,7 +11,8 @@ namespace Echoes.Puzzle
         [SerializeField] [Range(0, 5)] private int columnNum;
         [SerializeField] private LightTile[] lightTiles;
         [SerializeField] private Button clearButton;
-        
+
+        private int _lightActiveCount;
         private LightTile[,] _lightTiles;
         
         // Initialize
@@ -74,17 +75,17 @@ namespace Echoes.Puzzle
         
         protected override bool CheckPuzzleComplete()
         {
-            var lightActiveCount = 0;
+            _lightActiveCount = 0;
             for (var i = 0; i < rowNum; i++)
             {
                 for (var j = 0; j < columnNum; j++)
                 {
                     if (_lightTiles[i, j].IsActive)
-                        lightActiveCount++;
+                        _lightActiveCount++;
                 }
             }
             
-            return lightActiveCount >= lightTiles.Length;
+            return _lightActiveCount >= lightTiles.Length;
         }
 
 

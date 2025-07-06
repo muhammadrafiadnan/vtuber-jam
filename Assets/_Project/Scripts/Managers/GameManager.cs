@@ -26,7 +26,6 @@ namespace Echoes.Managers
             GameEvents.OnGameLose -= GameLose;
         }
         
-        // TODO: Drop ini klo selesai
         private void Start()
         {
             GameEvents.GameStartEvent();

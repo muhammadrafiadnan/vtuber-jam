@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace Echoes.Pattern
@@ -9,7 +8,7 @@ namespace Echoes.Pattern
         
         private void Awake()
         {
-            if (Instance == null)
+            if (Instance != null)
             {
                 Destroy(gameObject);
             }
