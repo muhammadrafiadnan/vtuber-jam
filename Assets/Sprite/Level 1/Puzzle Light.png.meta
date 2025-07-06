@@ -1,34 +1,22 @@
 fileFormatVersion: 2
-guid: 17b9f3a6ab6dffb4983f3d94c1d594ac
+guid: e74a43e2c13f5104e803bde597ef0296
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1146935207234812169
-    second: Warehouse Door_0
+      213: -4394384737185816675
+    second: Puzzle Light_0
   - first:
-      213: -6460888900673646646
-    second: Warehouse Door_1
+      213: -4962094635013360893
+    second: Puzzle Light_1
   - first:
-      213: -7447202308304125942
-    second: Warehouse Door_2
+      213: -8163876475820782310
+    second: Puzzle Light_2
   - first:
-      213: -3551549262015665168
-    second: Warehouse Door_3
+      213: -1650584788859778336
+    second: Puzzle Light_3
   - first:
-      213: -4395135316734673133
-    second: Warehouse Door_4
-  - first:
-      213: -2982965309988686000
-    second: Warehouse Door_5
-  - first:
-      213: 2863193431566050001
-    second: Warehouse Door_6
-  - first:
-      213: 1629290849480270478
-    second: Warehouse Door_7
-  - first:
-      213: 5173504277066128482
-    second: Warehouse Door_8
+      213: 175778167811669195
+    second: Puzzle Light_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -61,7 +49,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -99,7 +87,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -150,13 +138,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Warehouse Door_0
+      name: Puzzle Light_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 75
-        height: 65
+        x: 6
+        y: 7
+        width: 120
+        height: 98
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7f6416871844510f0800000000000000
-      internalID: -1146935207234812169
+      spriteID: d9f14ad2d520403c0800000000000000
+      internalID: -4394384737185816675
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warehouse Door_1
+      name: Puzzle Light_1
       rect:
         serializedVersion: 2
-        x: 83
-        y: 0
-        width: 76
-        height: 65
+        x: 132
+        y: 62
+        width: 27
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +175,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: acf451ea6cf4656a0800000000000000
-      internalID: -6460888900673646646
+      spriteID: 30338224839132bb0800000000000000
+      internalID: -4962094635013360893
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warehouse Door_2
+      name: Puzzle Light_2
       rect:
         serializedVersion: 2
-        x: 167
-        y: 0
-        width: 76
-        height: 65
+        x: 171
+        y: 67
+        width: 23
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -209,20 +197,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a00401325f836a890800000000000000
-      internalID: -7447202308304125942
+      spriteID: a1dc88c699514be80800000000000000
+      internalID: -8163876475820782310
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warehouse Door_3
+      name: Puzzle Light_3
       rect:
         serializedVersion: 2
-        x: 251
-        y: 0
-        width: 76
-        height: 65
+        x: 132
+        y: 21
+        width: 27
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,20 +219,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0fb614b53cc56bec0800000000000000
-      internalID: -3551549262015665168
+      spriteID: 0ea895431e1f719e0800000000000000
+      internalID: -1650584788859778336
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Warehouse Door_4
+      name: Puzzle Light_4
       rect:
         serializedVersion: 2
-        x: 335
-        y: 0
-        width: 76
-        height: 65
+        x: 171
+        y: 26
+        width: 23
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -253,96 +241,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 31f714247b75103c0800000000000000
-      internalID: -4395135316734673133
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Warehouse Door_5
-      rect:
-        serializedVersion: 2
-        x: 419
-        y: 0
-        width: 76
-        height: 65
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 057bfc0ead06a96d0800000000000000
-      internalID: -2982965309988686000
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Warehouse Door_6
-      rect:
-        serializedVersion: 2
-        x: 503
-        y: 0
-        width: 76
-        height: 65
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1d2e9b3914b1cb720800000000000000
-      internalID: 2863193431566050001
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Warehouse Door_7
-      rect:
-        serializedVersion: 2
-        x: 587
-        y: 0
-        width: 76
-        height: 65
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e82e01f25676c9610800000000000000
-      internalID: 1629290849480270478
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Warehouse Door_8
-      rect:
-        serializedVersion: 2
-        x: 671
-        y: 0
-        width: 75
-        height: 65
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 26c9d76cabafbc740800000000000000
-      internalID: 5173504277066128482
+      spriteID: bccfea3ff4d707200800000000000000
+      internalID: 175778167811669195
       vertices: []
       indices: 
       edges: []
@@ -360,16 +260,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Warehouse Door_0: -1146935207234812169
-      Warehouse Door_1: -6460888900673646646
-      Warehouse Door_2: -7447202308304125942
-      Warehouse Door_3: -3551549262015665168
-      Warehouse Door_4: -4395135316734673133
-      Warehouse Door_5: -2982965309988686000
-      Warehouse Door_6: 2863193431566050001
-      Warehouse Door_7: 1629290849480270478
-      Warehouse Door_8: 5173504277066128482
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
