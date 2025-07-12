@@ -1,3 +1,4 @@
+using Echoes.Managers;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -10,21 +11,20 @@ namespace Echoes.UI
 
         void Start()
         {
-            int levelAt = PlayerPrefs.GetInt("levelAt", 2);
+            var levelAt = PlayerPrefs.GetInt("levelAt", 2);
 
-            for (int i = 0; i < lvlButtons.Length; i++)
+            for (var i = 0; i < lvlButtons.Length; i++)
             {
+                var levelIndex = i + 2;
                 if (i + 2 > levelAt)
                 {
                     lvlButtons[i].interactable = false;
                 }
+                lvlButtons[i].onClick.AddListener(() => GoToLevel(levelIndex));
             }
         }
-        public void resetLevel()
-        {
-            PlayerPrefs.DeleteKey("LevelAt");
-            SceneManager.LoadScene(0);
-        }
+
+        private void GoToLevel(int index) => SceneTransition.Instance.LoadSceneIndex(index);
     }
 
 }

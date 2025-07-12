@@ -1,3 +1,4 @@
+using Echoes.Managers;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,13 +13,13 @@ namespace Echoes.UI
         protected override void InitOnStart()
         {
             base.InitOnStart();
-            nextButtonUI.onClick.AddListener(OnRetryButton);
+            nextButtonUI.onClick.AddListener(OnNextButton);
         }
 
-        private void OnRetryButton()
+        private void OnNextButton()
         {
             // AudioManager.Instance.PlayAudio(Musics.ButtonSfx);
-            // SceneTransitionManager.Instance.LoadSelectedScene(SceneState.MainMenu);
+            // SceneTransition.Instance.LoadSelectedScene(SceneState.NextLevel);
         }
     }
 }

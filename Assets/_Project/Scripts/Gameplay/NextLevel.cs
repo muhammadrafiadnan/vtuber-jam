@@ -3,7 +3,6 @@ using UnityEngine.SceneManagement;
 
 namespace Echoes.Gameplay
 {
-
     public class NextLevel : MonoBehaviour
     {
         public int nextSceneLoad;

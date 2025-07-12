@@ -1,22 +1,30 @@
+using System;
+using Echoes.Managers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace Echoes.UI
 {
     public class MenuManager : MonoBehaviour
     {
-        public void ChooseScene(int scene)
+        [SerializeField] private Button startButtonUI;
+        [SerializeField] private Button continueButtonUI;
+        [SerializeField] private Button exitButtonUI;
+        
+        private void Start()
         {
-            SceneManager.LoadScene(scene);
+            startButtonUI.onClick.AddListener(OpenNewLevelSelection);
+            continueButtonUI.onClick.AddListener(OpenLevelSelection);
+            exitButtonUI.onClick.AddListener(QuitGame);
         }
-        public void NewGame(int scene)
+        
+        private void OpenLevelSelection() => SceneTransition.Instance.LoadSelectedScene(SceneState.NextLevel);
+        private void OpenNewLevelSelection()
         {
             PlayerPrefs.DeleteKey("LevelAt");
-            SceneManager.LoadScene(scene);
+            SceneTransition.Instance.LoadSelectedScene(SceneState.NextLevel);
         }
-        public void QuitGame()
-        {
-            Application.Quit();
-        }
+        private void QuitGame() => Application.Quit();
     }
 }

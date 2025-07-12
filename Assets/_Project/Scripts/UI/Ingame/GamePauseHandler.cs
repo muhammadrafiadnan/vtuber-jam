@@ -1,3 +1,4 @@
+using Echoes.Managers;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -39,7 +40,7 @@ namespace Echoes.UI
         public void OnRetryButton()
         {
             // AudioManager.Instance.PlayAudio(Musics.ButtonSfx);
-            // SceneTransitionManager.Instance.LoadSelectedScene(SceneState.CurrentLevel);
+            SceneTransition.Instance.LoadSelectedScene(SceneState.CurrentLevel);
         }
     }
 }

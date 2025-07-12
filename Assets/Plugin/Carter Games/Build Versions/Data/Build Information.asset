@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildType: Prototype
   buildDate:
-    day: 5
+    day: 7
     month: 7
     year: 2025
-  buildNumber: 1
+  buildNumber: 2

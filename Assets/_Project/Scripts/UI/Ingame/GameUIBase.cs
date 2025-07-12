@@ -1,3 +1,4 @@
+using Echoes.Managers;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -28,7 +29,7 @@ namespace Echoes.UI
         private void OnHomeButton()
         {
             // FindObjectOfType<AudioManager>().PlayAudio(Musics.ButtonSfx);
-            // SceneTransitionManager.Instance.LoadSelectedScene(SceneState.MainMenu);
+            SceneTransition.Instance.LoadSelectedScene(SceneState.MainMenu);
         }
     }
 }
